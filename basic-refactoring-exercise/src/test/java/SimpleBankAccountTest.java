@@ -56,7 +56,7 @@ class SimpleBankAccountTest {
         double amount_after_withdraw = 30;
         bankAccount.deposit(accountHolder.getId(), FIRST_DEPOSIT_AMOUNT);
         bankAccount.withdraw(accountHolder.getId(), WITHDRAW_AMOUNT);
-        assertEquals(amount_after_withdraw - bankAccount.getFee(), bankAccount.getBalance());
+        assertEquals(amount_after_withdraw - FEE, bankAccount.getBalance());
     }
 
     @Test
