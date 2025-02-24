@@ -9,10 +9,12 @@ public class SimpleBankAccount implements BankAccount {
 
     private double balance;
     private final AccountHolder holder;
+    private final double fee;
 
-    public SimpleBankAccount(final AccountHolder holder, final double balance) {
+    public SimpleBankAccount(final AccountHolder holder, final double balance, final double fee) {
         this.holder = holder;
         this.balance = balance;
+        this.fee = fee;
     }
     @Override
     public AccountHolder getHolder(){
@@ -34,8 +36,13 @@ public class SimpleBankAccount implements BankAccount {
     @Override
     public void withdraw(final int userID, final double amount) {
         if (checkUser(userID) && isWithdrawAllowed(amount)) {
-            this.balance -= amount;
+            this.balance -= amount + getFee();
         }
+    }
+
+    @Override
+    public double getFee(){
+        return this.fee;
     }
 
     private boolean isWithdrawAllowed(final double amount){

@@ -15,13 +15,14 @@ class SimpleBankAccountTest {
     private static final double INITIAL_AMOUNT = 0;
     private static final double FIRST_DEPOSIT_AMOUNT = 100;
     private static final double WITHDRAW_AMOUNT = 70;
+    private static final double FEE = 1;
     private AccountHolder accountHolder;
     private BankAccount bankAccount;
 
     @BeforeEach
     void beforeEach(){
         accountHolder = new AccountHolder("Mario", "Rossi", USER_ID);
-        bankAccount = new SimpleBankAccount(accountHolder, INITIAL_AMOUNT);
+        bankAccount = new SimpleBankAccount(accountHolder, INITIAL_AMOUNT, FEE);
     }
 
     @Test
@@ -55,7 +56,7 @@ class SimpleBankAccountTest {
         double amount_after_withdraw = 30;
         bankAccount.deposit(accountHolder.getId(), FIRST_DEPOSIT_AMOUNT);
         bankAccount.withdraw(accountHolder.getId(), WITHDRAW_AMOUNT);
-        assertEquals(amount_after_withdraw, bankAccount.getBalance());
+        assertEquals(amount_after_withdraw - bankAccount.getFee(), bankAccount.getBalance());
     }
 
     @Test
