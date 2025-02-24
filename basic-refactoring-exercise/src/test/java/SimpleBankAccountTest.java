@@ -44,6 +44,13 @@ class SimpleBankAccountTest {
     }
 
     @Test
+    void testWrongAmountDeposit() {
+        double deposit_wrong_amount = -50;
+        bankAccount.deposit(accountHolder.getId(), deposit_wrong_amount);
+        assertEquals(INITIAL_AMOUNT, bankAccount.getBalance());
+    }
+
+    @Test
     void testWithdraw() {
         double amount_after_withdraw = 30;
         bankAccount.deposit(accountHolder.getId(), FIRST_DEPOSIT_AMOUNT);
