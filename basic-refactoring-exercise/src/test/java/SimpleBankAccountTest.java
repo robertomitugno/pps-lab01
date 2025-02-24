@@ -36,10 +36,10 @@ class SimpleBankAccountTest {
     }
 
     @Test
-    void testWrongDeposit() {
-        double deposit_amount_wrong_user = 50;
+    void testWrongUserDeposit() {
+        double deposit_amount_to_wrong_user = 50;
         bankAccount.deposit(accountHolder.getId(), FIRST_DEPOSIT_AMOUNT);
-        bankAccount.deposit(USER_ID_WRONG, deposit_amount_wrong_user);
+        bankAccount.deposit(USER_ID_WRONG, deposit_amount_to_wrong_user);
         assertEquals(FIRST_DEPOSIT_AMOUNT, bankAccount.getBalance());
     }
 
