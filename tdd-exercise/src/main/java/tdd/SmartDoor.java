@@ -16,7 +16,7 @@ public class SmartDoor implements SmartDoorLock {
 
     @Override
     public void lock() {
-
+        doorLocked = true;
     }
 
     @Override
