@@ -9,6 +9,7 @@ public class SmartDoorLockTest {
 
     private static final int PIN_DOOR = 1234;
     private static final int WRONG_PIN = 1111;
+    private static final int NEW_PIN = 4321;
     private static final int WRONG_PIN_SHORT = 1;
     private static final int WRONG_PIN_LONG = 55555;
     private static final int MAX_ATTEMPTS = 3;
@@ -37,6 +38,15 @@ public class SmartDoorLockTest {
                 () -> assertThrows(IllegalArgumentException.class, () -> smartDoorWrongPin.setPin(WRONG_PIN_SHORT)),
                 () -> assertThrows(IllegalArgumentException.class, () -> smartDoorWrongPin.setPin(WRONG_PIN_LONG))
         );
+    }
+
+    @Test
+    public void testSetPin(){
+        smartDoor.lock();
+        System.out.println(smartDoor.isLocked());
+        smartDoor.setPin(NEW_PIN);
+        smartDoor.unlock(NEW_PIN);
+        assertTrue(smartDoor.isLocked());
     }
 
     @Test

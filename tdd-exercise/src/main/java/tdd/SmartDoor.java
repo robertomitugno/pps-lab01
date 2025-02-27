@@ -22,7 +22,8 @@ public class SmartDoor implements SmartDoorLock {
         if(pin <= PIN_MIN_VALUE || pin >= PIN_MAX_VALUE) {
             throw new IllegalArgumentException("Pin must be between 1000 and 9999");
         }
-        this.pin = pin;
+        if(!this.isBlocked && !this.doorLocked)
+            this.pin = pin;
     }
 
     @Override
