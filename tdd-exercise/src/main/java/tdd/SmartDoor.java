@@ -19,10 +19,10 @@ public class SmartDoor implements SmartDoorLock {
 
     @Override
     public void setPin(int pin) {
-        if(pin <= PIN_MIN_VALUE || pin >= PIN_MAX_VALUE) {
+        if(pin <= PIN_MIN_VALUE || pin >= PIN_MAX_VALUE)
             throw new IllegalArgumentException("Pin must be between 1000 and 9999");
-        }
-        if(!this.isBlocked && !this.doorLocked)
+
+        if(!isBlocked() && !isLocked())
             this.pin = pin;
     }
 

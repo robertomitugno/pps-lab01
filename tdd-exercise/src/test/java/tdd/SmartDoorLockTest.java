@@ -41,9 +41,8 @@ public class SmartDoorLockTest {
     }
 
     @Test
-    public void testSetPin(){
+    public void testCheckSetPinUnenable(){
         smartDoor.lock();
-        System.out.println(smartDoor.isLocked());
         smartDoor.setPin(NEW_PIN);
         smartDoor.unlock(NEW_PIN);
         assertTrue(smartDoor.isLocked());
