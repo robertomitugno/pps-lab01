@@ -5,7 +5,7 @@ public class SmartDoor implements SmartDoorLock {
     private boolean doorLocked = false;
     private int maxAttempts;
     private int failedAttempts;
-    private boolean pinIsSetted;
+    private Integer pin;
 
 
     public SmartDoor(int maxAttempts, int failedAttempts) {
@@ -15,17 +15,19 @@ public class SmartDoor implements SmartDoorLock {
 
     @Override
     public void setPin(int pin) {
-        pinIsSetted = true;
+        this.pin = pin;
     }
 
     @Override
     public void unlock(int pin) {
-        doorLocked = false;
+        if(this.pin == pin) {
+            doorLocked = false;
+        }
     }
 
     @Override
     public void lock() {
-        if (!pinIsSetted) {
+        if (pin == null) {
             throw new IllegalStateException("Pin not set");
         }
         doorLocked = true;
@@ -53,6 +55,6 @@ public class SmartDoor implements SmartDoorLock {
 
     @Override
     public void reset() {
-        pinIsSetted = false;
+        pin = null;
     }
 }
