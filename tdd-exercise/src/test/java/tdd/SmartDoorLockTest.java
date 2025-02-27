@@ -68,4 +68,13 @@ public class SmartDoorLockTest {
         assertEquals(FAILED_ATTEMPTS, smartDoor.getFailedAttempts());
     }
 
+    @Test
+    public void testFailedAttemptIncrement(){
+        smartDoor.lock();
+        smartDoor.unlock(WRONG_PIN);
+        smartDoor.unlock(WRONG_PIN);
+        smartDoor.unlock(WRONG_PIN);
+        assertEquals(MAX_ATTEMPTS, smartDoor.getFailedAttempts());
+    }
+
 }

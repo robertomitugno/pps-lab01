@@ -22,6 +22,8 @@ public class SmartDoor implements SmartDoorLock {
     public void unlock(int pin) {
         if(this.pin == pin) {
             doorLocked = false;
+        } else {
+            failedAttempts++;
         }
     }
 
