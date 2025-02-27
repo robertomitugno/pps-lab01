@@ -41,7 +41,7 @@ public class SmartDoorLockTest {
     }
 
     @Test
-    public void testCheckSetPinUnenable(){
+    public void testCheckSetPinUnenableDoorLocked(){
         smartDoor.lock();
         smartDoor.setPin(NEW_PIN);
         smartDoor.unlock(NEW_PIN);
