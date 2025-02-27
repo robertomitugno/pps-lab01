@@ -1,6 +1,6 @@
 package tdd;
 
-public class SmartDoor implements SmartDoorLock {
+public class SmartDoorLockImpl implements SmartDoorLock {
 
     private boolean doorLocked = false;
     private boolean isBlocked = false;
@@ -12,7 +12,7 @@ public class SmartDoor implements SmartDoorLock {
 
 
 
-    public SmartDoor(int maxAttempts, int failedAttempts) {
+    public SmartDoorLockImpl(int maxAttempts, int failedAttempts) {
         this.maxAttempts = maxAttempts;
         this.failedAttempts = failedAttempts;
     }

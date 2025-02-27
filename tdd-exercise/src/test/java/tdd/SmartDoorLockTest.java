@@ -14,11 +14,11 @@ public class SmartDoorLockTest {
     private static final int WRONG_PIN_LONG = 55555;
     private static final int MAX_ATTEMPTS = 3;
     private static final int FAILED_ATTEMPTS = 0;
-    SmartDoor smartDoor;
+    SmartDoorLockImpl smartDoor;
 
     @BeforeEach
     void beforeEach(){
-        smartDoor = new SmartDoor(MAX_ATTEMPTS, FAILED_ATTEMPTS);
+        smartDoor = new SmartDoorLockImpl(MAX_ATTEMPTS, FAILED_ATTEMPTS);
         setPin(PIN_DOOR);
     }
 
@@ -33,7 +33,7 @@ public class SmartDoorLockTest {
 
     @Test
     public void testPinUncorrect(){
-        SmartDoor smartDoorWrongPin = new SmartDoor(MAX_ATTEMPTS, FAILED_ATTEMPTS);
+        SmartDoorLockImpl smartDoorWrongPin = new SmartDoorLockImpl(MAX_ATTEMPTS, FAILED_ATTEMPTS);
         assertAll(
                 () -> assertThrows(IllegalArgumentException.class, () -> smartDoorWrongPin.setPin(WRONG_PIN_SHORT)),
                 () -> assertThrows(IllegalArgumentException.class, () -> smartDoorWrongPin.setPin(WRONG_PIN_LONG))
@@ -67,7 +67,7 @@ public class SmartDoorLockTest {
 
     @Test
     public void testLockWithoutPin(){
-        SmartDoor smartDoorUnsettedPin = new SmartDoor(MAX_ATTEMPTS, FAILED_ATTEMPTS);
+        SmartDoorLockImpl smartDoorUnsettedPin = new SmartDoorLockImpl(MAX_ATTEMPTS, FAILED_ATTEMPTS);
         assertThrows(IllegalStateException.class, () -> smartDoorUnsettedPin.lock());
     }
 
