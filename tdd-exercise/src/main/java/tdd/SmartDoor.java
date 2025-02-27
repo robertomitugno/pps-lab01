@@ -3,9 +3,11 @@ package tdd;
 public class SmartDoor implements SmartDoorLock {
 
     private boolean doorLocked = false;
+    private boolean isBlocked = false;
     private int maxAttempts;
     private int failedAttempts;
     private Integer pin;
+
 
 
     public SmartDoor(int maxAttempts, int failedAttempts) {
@@ -24,6 +26,9 @@ public class SmartDoor implements SmartDoorLock {
             doorLocked = false;
         } else {
             failedAttempts++;
+            if(failedAttempts == maxAttempts){
+                isBlocked = true;
+            }
         }
     }
 
@@ -42,7 +47,7 @@ public class SmartDoor implements SmartDoorLock {
 
     @Override
     public boolean isBlocked() {
-        return false;
+        return isBlocked;
     }
 
     @Override
