@@ -9,11 +9,12 @@ public class SmartDoorLockTest {
 
     private static final int PIN_DOOR = 1234;
     private static final int MAX_ATTEMPTS = 3;
+    private static final int FAILED_ATTEMPTS = 0;
     SmartDoor smartDoor;
 
     @BeforeEach
     void beforeEach(){
-        smartDoor = new SmartDoor(MAX_ATTEMPTS);
+        smartDoor = new SmartDoor(MAX_ATTEMPTS, FAILED_ATTEMPTS);
         setPin(PIN_DOOR);
     }
 
@@ -32,6 +33,11 @@ public class SmartDoorLockTest {
         assertTrue(smartDoor.isLocked());
     }
 
+    @Test void testLockWithoutPin(){
+        SmartDoor smartDoor1 = new SmartDoor(MAX_ATTEMPTS, FAILED_ATTEMPTS);
+        assertThrows(IllegalStateException.class, () -> smartDoor1.lock());
+    }
+
     @Test
     public void testUnlock(){
         smartDoor.lock();
@@ -47,6 +53,11 @@ public class SmartDoorLockTest {
     @Test
     public void testMaxAttempts(){
         assertEquals(MAX_ATTEMPTS, smartDoor.getMaxAttempts());
+    }
+
+    @Test
+    public void testFailedAttempt(){
+        assertEquals(FAILED_ATTEMPTS, smartDoor.getFailedAttempts());
     }
 
 }

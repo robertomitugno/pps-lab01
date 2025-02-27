@@ -3,15 +3,19 @@ package tdd;
 public class SmartDoor implements SmartDoorLock {
 
     private boolean doorLocked = false;
-    private final int maxAttempts;
+    private int maxAttempts;
+    private int failedAttempts;
+    private boolean pinIsSetted;
 
-    public SmartDoor(int maxAttempts) {
+
+    public SmartDoor(int maxAttempts, int failedAttempts) {
         this.maxAttempts = maxAttempts;
+        this.failedAttempts = failedAttempts;
     }
 
     @Override
     public void setPin(int pin) {
-
+        pinIsSetted = true;
     }
 
     @Override
@@ -21,6 +25,9 @@ public class SmartDoor implements SmartDoorLock {
 
     @Override
     public void lock() {
+        if (!pinIsSetted) {
+            throw new IllegalStateException("Pin not set");
+        }
         doorLocked = true;
     }
 
