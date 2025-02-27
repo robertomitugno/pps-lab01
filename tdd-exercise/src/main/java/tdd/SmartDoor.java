@@ -7,6 +7,8 @@ public class SmartDoor implements SmartDoorLock {
     private int maxAttempts;
     private int failedAttempts;
     private Integer pin;
+    private final int PIN_MIN_VALUE = 1000;
+    private final int PIN_MAX_VALUE = 9999;
 
 
 
@@ -17,8 +19,8 @@ public class SmartDoor implements SmartDoorLock {
 
     @Override
     public void setPin(int pin) {
-        if(pin <= 1000 || pin >= 9999) {
-            throw new IllegalArgumentException("Pin must be between 1000 to 9999");
+        if(pin <= PIN_MIN_VALUE || pin >= PIN_MAX_VALUE) {
+            throw new IllegalArgumentException("Pin must be between 1000 and 9999");
         }
         this.pin = pin;
     }

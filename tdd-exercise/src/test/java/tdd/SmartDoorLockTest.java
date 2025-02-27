@@ -31,7 +31,7 @@ public class SmartDoorLockTest {
     }
 
     @Test
-    public void testPinCorrect(){
+    public void testPinUncorrect(){
         SmartDoor smartDoorWrongPin = new SmartDoor(MAX_ATTEMPTS, FAILED_ATTEMPTS);
         assertAll(
                 () -> assertThrows(IllegalArgumentException.class, () -> smartDoorWrongPin.setPin(WRONG_PIN_SHORT)),
