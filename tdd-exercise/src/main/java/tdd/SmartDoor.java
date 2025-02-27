@@ -3,6 +3,11 @@ package tdd;
 public class SmartDoor implements SmartDoorLock {
 
     private boolean doorLocked = false;
+    private final int maxAttempts;
+
+    public SmartDoor(int maxAttempts) {
+        this.maxAttempts = maxAttempts;
+    }
 
     @Override
     public void setPin(int pin) {
@@ -31,7 +36,7 @@ public class SmartDoor implements SmartDoorLock {
 
     @Override
     public int getMaxAttempts() {
-        return 0;
+        return this.maxAttempts;
     }
 
     @Override

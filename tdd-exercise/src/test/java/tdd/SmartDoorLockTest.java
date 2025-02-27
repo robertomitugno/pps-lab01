@@ -12,7 +12,7 @@ public class SmartDoorLockTest {
 
     @BeforeEach
     void beforeEach(){
-        smartDoor = new SmartDoor();
+        smartDoor = new SmartDoor(3);
         setPin(PIN_DOOR);
     }
 
@@ -36,6 +36,16 @@ public class SmartDoorLockTest {
         smartDoor.lock();
         smartDoor.unlock(PIN_DOOR);
         assertFalse(smartDoor.isLocked());
+    }
+
+    @Test
+    public void testCheckBlockedInitial(){
+        assertFalse(smartDoor.isBlocked());
+    }
+
+    @Test
+    public void testMaxAttempts(){
+        assertEquals(3, smartDoor.getMaxAttempts());
     }
 
 }
