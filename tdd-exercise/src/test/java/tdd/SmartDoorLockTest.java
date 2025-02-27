@@ -13,26 +13,26 @@ public class SmartDoorLockTest {
     @BeforeEach
     void beforeEach(){
         smartDoor = new SmartDoor();
+        setPin(PIN_DOOR);
+    }
+
+    public void setPin(int pin){
+        smartDoor.setPin(pin);
     }
 
     @Test
     public void testLockInitial() {
-        smartDoor = new SmartDoor();
         assertFalse(smartDoor.isLocked());
     }
 
     @Test
     public void testLock(){
-        smartDoor = new SmartDoor();
-        smartDoor.setPin(PIN_DOOR);
         smartDoor.lock();
         assertTrue(smartDoor.isLocked());
     }
 
     @Test
     public void testUnlock(){
-        smartDoor = new SmartDoor();
-        smartDoor.setPin(PIN_DOOR);
         smartDoor.lock();
         smartDoor.unlock(PIN_DOOR);
         assertFalse(smartDoor.isLocked());
