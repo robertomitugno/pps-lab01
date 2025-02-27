@@ -22,32 +22,32 @@ public class SmartDoor implements SmartDoorLock {
 
     @Override
     public void unlock(int pin) {
-        if(this.pin == pin) {
-            doorLocked = false;
+        if (this.pin == pin) {
+            this.doorLocked = false;
+            this.failedAttempts = 0;
         } else {
-            failedAttempts++;
-            if(failedAttempts == maxAttempts){
-                isBlocked = true;
+            if (++this.failedAttempts >= this.maxAttempts) {
+                this.isBlocked = true;
             }
         }
     }
 
     @Override
     public void lock() {
-        if (pin == null) {
+        if (this.pin == null) {
             throw new IllegalStateException("Pin not set");
         }
-        doorLocked = true;
+        this.doorLocked = true;
     }
 
     @Override
     public boolean isLocked() {
-        return doorLocked;
+        return this.doorLocked;
     }
 
     @Override
     public boolean isBlocked() {
-        return isBlocked;
+        return this.isBlocked;
     }
 
     @Override
@@ -62,6 +62,6 @@ public class SmartDoor implements SmartDoorLock {
 
     @Override
     public void reset() {
-        pin = null;
+        this.pin = null;
     }
 }
