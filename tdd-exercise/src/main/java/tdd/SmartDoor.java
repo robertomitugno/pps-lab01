@@ -48,11 +48,11 @@ public class SmartDoor implements SmartDoorLock {
 
     @Override
     public int getFailedAttempts() {
-        return 0;
+        return this.failedAttempts;
     }
 
     @Override
     public void reset() {
-
+        pinIsSetted = false;
     }
 }

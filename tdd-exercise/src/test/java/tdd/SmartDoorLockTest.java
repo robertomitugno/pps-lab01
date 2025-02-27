@@ -34,8 +34,8 @@ public class SmartDoorLockTest {
     }
 
     @Test void testLockWithoutPin(){
-        SmartDoor smartDoor1 = new SmartDoor(MAX_ATTEMPTS, FAILED_ATTEMPTS);
-        assertThrows(IllegalStateException.class, () -> smartDoor1.lock());
+        SmartDoor smartDoorUnsettedPin = new SmartDoor(MAX_ATTEMPTS, FAILED_ATTEMPTS);
+        assertThrows(IllegalStateException.class, () -> smartDoorUnsettedPin.lock());
     }
 
     @Test
