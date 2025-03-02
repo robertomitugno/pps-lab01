@@ -40,6 +40,7 @@ public class MinMaxStackImpl implements MinMaxStack {
 
     @Override
     public int getMax() {
+        checkEmptyStack(this.stack);
         int max = this.stack.peek();
         for(Integer getValue : this.stack){
             if(getValue > max)
