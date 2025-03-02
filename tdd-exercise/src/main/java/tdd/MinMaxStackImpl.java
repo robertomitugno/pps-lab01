@@ -31,6 +31,8 @@ public class MinMaxStackImpl implements MinMaxStack {
 
     @Override
     public int getMin() {
+        if(this.stack.isEmpty())
+            throw new IllegalStateException("Stack is empty");
         int min = this.stack.peek();
         for(Integer getValue : this.stack){
             if(getValue < min)
