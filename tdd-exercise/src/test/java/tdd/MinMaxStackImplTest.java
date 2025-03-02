@@ -3,7 +3,6 @@ package tdd;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class MinMaxStackImplTest {
@@ -37,5 +36,9 @@ class MinMaxStackImplTest {
         assertTrue(minMaxStack.isEmpty());
     }
 
-
+    @Test
+    public void testPopEmptyStack() {
+        MinMaxStackImpl minMaxStack = new MinMaxStackImpl();
+        assertThrows(IllegalStateException.class, () -> minMaxStack.pop());
+    }
 }
