@@ -12,7 +12,7 @@ public class MinMaxStackImpl implements MinMaxStack {
 
     @Override
     public void push(int value) {
-
+        stack.push(value);
     }
 
     @Override
