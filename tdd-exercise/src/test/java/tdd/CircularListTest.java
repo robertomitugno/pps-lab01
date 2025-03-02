@@ -16,6 +16,7 @@ public class CircularListTest {
     private final static int FOURTH_VALUE = 6;
     private final static int MAX_CAPACITY = 3;
     private final static int SIZE_AFTER_REMOVE = 2;
+    private final static int INDEX_GET_VALUE = 1;
 
     private CircularQueueImpl circularQueue;
 
@@ -68,6 +69,6 @@ public class CircularListTest {
     public void testGetByIndex(){
         circularQueue.add(FIRST_VALUE);
         circularQueue.add(SECOND_VALUE);
-        assertEquals(SECOND_VALUE, circularQueue.get(1));
+        assertEquals(SECOND_VALUE, circularQueue.get(INDEX_GET_VALUE));
     }
 }

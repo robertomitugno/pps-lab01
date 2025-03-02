@@ -48,6 +48,11 @@ public interface CircularQueue {
      */
     void remove();
 
-
+    /**
+     * Get the value at the specified index in the circularQueue.
+     *
+     * @param i The index of the value to retrieve.
+     * @return The value at the specified index in the circularQueue.
+     */
     int get(int i);
 }
