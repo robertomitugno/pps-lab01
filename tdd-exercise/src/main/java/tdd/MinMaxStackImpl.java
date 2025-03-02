@@ -17,7 +17,7 @@ public class MinMaxStackImpl implements MinMaxStack {
 
     @Override
     public int pop() {
-        return 0;
+        return stack.pop();
     }
 
     @Override

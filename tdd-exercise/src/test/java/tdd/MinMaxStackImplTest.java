@@ -28,4 +28,12 @@ class MinMaxStackImplTest {
         minMaxStack.push(FIRST_INTEGER);
         assertFalse(minMaxStack.isEmpty());
     }
+
+    @Test
+    public void testStackPop() {
+        MinMaxStackImpl minMaxStack = new MinMaxStackImpl();
+        minMaxStack.push(FIRST_INTEGER);
+        minMaxStack.pop();
+        assertTrue(minMaxStack.isEmpty());
+    }
 }
