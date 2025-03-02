@@ -17,20 +17,17 @@ class MinMaxStackImplTest {
 
     @Test
     public void testInitialEmpty() {
-        MinMaxStackImpl minMaxStack = new MinMaxStackImpl();
         assertTrue(minMaxStack.isEmpty());
     }
 
     @Test
     public void testPush() {
-        MinMaxStackImpl minMaxStack = new MinMaxStackImpl();
         minMaxStack.push(FIRST_INTEGER);
         assertFalse(minMaxStack.isEmpty());
     }
 
     @Test
     public void testPop() {
-        MinMaxStackImpl minMaxStack = new MinMaxStackImpl();
         minMaxStack.push(FIRST_INTEGER);
         minMaxStack.pop();
         assertTrue(minMaxStack.isEmpty());
@@ -38,13 +35,11 @@ class MinMaxStackImplTest {
 
     @Test
     public void testPopEmpty() {
-        MinMaxStackImpl minMaxStack = new MinMaxStackImpl();
         assertThrows(IllegalStateException.class, () -> minMaxStack.pop());
     }
 
     @Test
     public void testPeek() {
-        MinMaxStackImpl minMaxStack = new MinMaxStackImpl();
         minMaxStack.push(FIRST_INTEGER);
         assertAll(
                 () -> assertEquals(FIRST_INTEGER, minMaxStack.peek()),
@@ -54,7 +49,6 @@ class MinMaxStackImplTest {
 
     @Test
     public void testPeekEmpty() {
-        MinMaxStackImpl minMaxStack = new MinMaxStackImpl();
         assertThrows(IllegalStateException.class, () -> minMaxStack.peek());
     }
 }
