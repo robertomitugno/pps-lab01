@@ -18,7 +18,7 @@ public class CircularListTest {
     private final static int SIZE_AFTER_REMOVE = 2;
     private final static int INDEX_GET_VALUE = 1;
     private final static int INDEX_CHECK_ADD_VALUE_IS_LAST = 2;
-
+    private final static int INDEX_GET_VALUE_ON_ADD_WHEN_FULL = 0;
     private CircularQueueImpl circularQueue;
 
     @BeforeEach
@@ -79,5 +79,17 @@ public class CircularListTest {
         circularQueue.add(SECOND_VALUE);
         circularQueue.add(THIRD_VALUE);
         assertEquals(THIRD_VALUE, circularQueue.get(INDEX_CHECK_ADD_VALUE_IS_LAST));
+    }
+
+    @Test
+    public void testAddWhenFull(){
+        circularQueue.add(FIRST_VALUE);
+        circularQueue.add(SECOND_VALUE);
+        circularQueue.add(THIRD_VALUE);
+        circularQueue.add(FOURTH_VALUE);
+        assertAll(
+                () -> assertEquals(MAX_CAPACITY, circularQueue.getCapacity()),
+                () -> assertEquals(FOURTH_VALUE, circularQueue.get(INDEX_GET_VALUE_ON_ADD_WHEN_FULL))
+        );
     }
 }

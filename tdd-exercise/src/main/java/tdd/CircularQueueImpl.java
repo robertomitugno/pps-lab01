@@ -23,6 +23,11 @@ public class CircularQueueImpl implements CircularQueue {
     public void add(int value) {
         if(!(this.circularQueue.size() == this.MAX_CAPACITY))
             this.circularQueue.add(value);
+        else
+            if(this.circularQueue.size() == this.MAX_CAPACITY) {
+                remove();
+                this.circularQueue.add(0, value);
+            }
     }
 
     @Override
