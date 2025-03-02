@@ -10,13 +10,14 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class CircularListTest {
 
-    private final static int FIRST_VALUE = 1;
-    private final static int SECOND_VALUE = 4;
-    private final static int THIRD_VALUE = 3;
-    private final static int FOURTH_VALUE = 6;
+    private final static int FIRST_VALUE = 25;
+    private final static int SECOND_VALUE = 7;
+    private final static int THIRD_VALUE = 98;
+    private final static int FOURTH_VALUE = 20;
     private final static int MAX_CAPACITY = 3;
     private final static int SIZE_AFTER_REMOVE = 2;
     private final static int INDEX_GET_VALUE = 1;
+    private final static int INDEX_CHECK_ADD_VALUE_IS_LAST = 2;
 
     private CircularQueueImpl circularQueue;
 
@@ -77,6 +78,6 @@ public class CircularListTest {
         circularQueue.add(FIRST_VALUE);
         circularQueue.add(SECOND_VALUE);
         circularQueue.add(THIRD_VALUE);
-        assertEquals(THIRD_VALUE, circularQueue.get(2));
+        assertEquals(THIRD_VALUE, circularQueue.get(INDEX_CHECK_ADD_VALUE_IS_LAST));
     }
 }
