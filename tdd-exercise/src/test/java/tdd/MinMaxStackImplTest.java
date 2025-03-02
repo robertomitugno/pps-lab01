@@ -9,6 +9,7 @@ class MinMaxStackImplTest {
 
     MinMaxStack minMaxStack;
     private static final int FIRST_INTEGER = 1;
+    private static final int SECOND_INTEGER = 2;
 
     @BeforeEach
     void setUp() {
@@ -55,7 +56,7 @@ class MinMaxStackImplTest {
     @Test
     public void testGetMin(){
         minMaxStack.push(FIRST_INTEGER);
-        minMaxStack.push(2);
+        minMaxStack.push(SECOND_INTEGER);
         assertEquals(FIRST_INTEGER, minMaxStack.getMin());
     }
 }
