@@ -48,4 +48,18 @@ public class CircularListTest {
         circularQueue.add(FOURTH_VALUE);
         assertEquals(MAX_CAPACITY, circularQueue.size());
     }
+
+    @Test
+    public void testGetCapacity(){
+        assertEquals(MAX_CAPACITY, circularQueue.getCapacity());
+    }
+
+    @Test
+    public void testRemove(){
+        circularQueue.add(FIRST_VALUE);
+        circularQueue.add(SECOND_VALUE);
+        circularQueue.add(THIRD_VALUE);
+        circularQueue.remove();
+        assertEquals(2, circularQueue.size());
+    }
 }

@@ -29,4 +29,14 @@ public class CircularQueueImpl implements CircularQueue {
         return this.circularQueue.size();
     }
 
+    @Override
+    public int getCapacity() {
+        return this.MAX_CAPACITY;
+    }
+
+    @Override
+    public void remove() {
+        this.circularQueue.remove(1);
+    }
+
 }

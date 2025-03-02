@@ -35,4 +35,13 @@ public interface CircularQueue {
      * @return The size of the circularQueue.
      */
     int size();
+
+    /**
+     * Gets the maximum number of elements that can be contained in the circularQueue.
+     *
+     * @return The max capacity of the circularQueue.
+     */
+    int getCapacity();
+
+    void remove();
 }
