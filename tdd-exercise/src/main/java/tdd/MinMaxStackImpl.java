@@ -1,36 +1,37 @@
 package tdd;
 
-import java.util.Stack;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MinMaxStackImpl implements MinMaxStack {
 
-    Stack<Integer> stack;
+    List<Integer> stack;
 
     MinMaxStackImpl() {
-        this.stack = new Stack<>();
+        this.stack = new ArrayList<>();
     }
 
     @Override
     public void push(int value) {
-        this.stack.push(value);
+        this.stack.add(value);
     }
 
     @Override
     public int pop() {
         checkEmptyStack(this.stack);
-        return this.stack.pop();
+        return this.stack.removeLast();
     }
 
     @Override
     public int peek() {
         checkEmptyStack(this.stack);
-        return this.stack.peek();
+        return this.stack.get(this.stack.size() - 1);
     }
 
     @Override
     public int getMin() {
         checkEmptyStack(this.stack);
-        int min = this.stack.peek();
+        int min = this.stack.get(this.stack.size() - 1);
         for(Integer getValue : this.stack){
             if(getValue < min)
                 min = getValue;
@@ -41,7 +42,7 @@ public class MinMaxStackImpl implements MinMaxStack {
     @Override
     public int getMax() {
         checkEmptyStack(this.stack);
-        int max = this.stack.peek();
+        int max = this.stack.get(this.stack.size() - 1);
         for(Integer getValue : this.stack){
             if(getValue > max)
                 max = getValue;
@@ -59,7 +60,7 @@ public class MinMaxStackImpl implements MinMaxStack {
         return this.stack.size();
     }
 
-    private void checkEmptyStack(Stack stack){
+    private void checkEmptyStack(List<Integer> stack){
         if(stack.isEmpty())
             throw new IllegalStateException("Stack is empty");
     }
