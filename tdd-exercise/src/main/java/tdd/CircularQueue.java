@@ -28,4 +28,11 @@ public interface CircularQueue {
      * @param value The integer to add.
      */
     void add(int value);
+
+    /**
+     * Gets the number of elements in the circularQueue.
+     *
+     * @return The size of the circularQueue.
+     */
+    int size();
 }
