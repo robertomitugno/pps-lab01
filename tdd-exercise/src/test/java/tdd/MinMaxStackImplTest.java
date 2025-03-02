@@ -51,4 +51,10 @@ class MinMaxStackImplTest {
                 () -> assertFalse(minMaxStack.isEmpty())
         );
     }
+
+    @Test
+    public void testPeekEmpty() {
+        MinMaxStackImpl minMaxStack = new MinMaxStackImpl();
+        assertThrows(IllegalStateException.class, () -> minMaxStack.peek());
+    }
 }
