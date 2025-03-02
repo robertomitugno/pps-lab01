@@ -47,4 +47,7 @@ public interface CircularQueue {
      * Remove an integer onto the circularQueue.
      */
     void remove();
+
+
+    int get(int i);
 }

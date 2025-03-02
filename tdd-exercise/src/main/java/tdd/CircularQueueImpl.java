@@ -6,7 +6,6 @@ import java.util.List;
 public class CircularQueueImpl implements CircularQueue {
 
     private final int MAX_CAPACITY;
-    private int index_remove_element = 1;
     private static List<Integer> circularQueue;
 
     CircularQueueImpl(int size) {
@@ -37,7 +36,13 @@ public class CircularQueueImpl implements CircularQueue {
 
     @Override
     public void remove() {
-        this.circularQueue.remove(index_remove_element);
+        this.circularQueue.remove(0);
     }
+
+    @Override
+    public int get(int i) {
+        return this.circularQueue.get(i);
+    }
+
 
 }

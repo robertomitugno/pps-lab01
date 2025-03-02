@@ -63,4 +63,11 @@ public class CircularListTest {
         circularQueue.remove();
         assertEquals(SIZE_AFTER_REMOVE, circularQueue.size());
     }
+
+    @Test
+    public void testGetByIndex(){
+        circularQueue.add(FIRST_VALUE);
+        circularQueue.add(SECOND_VALUE);
+        assertEquals(SECOND_VALUE, circularQueue.get(1));
+    }
 }
