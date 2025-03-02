@@ -16,9 +16,16 @@ package tdd;
 public interface CircularQueue {
 
     /**
-     * Checks if the queue is empty.
+     * Checks if the circularQueue is empty.
      *
-     * @return true if the queue is empty, false otherwise.
+     * @return true if the circularQueue is empty, false otherwise.
      */
     boolean isEmpty();
+
+    /**
+     * Add an integer onto the circularQueue.
+     *
+     * @param value The integer to add.
+     */
+    void add(int value);
 }

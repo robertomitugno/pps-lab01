@@ -15,4 +15,10 @@ public class CircularQueueImpl implements CircularQueue {
     public boolean isEmpty() {
         return circularQueue.isEmpty();
     }
+
+    @Override
+    public void add(int value) {
+        circularQueue.add(value);
+    }
+
 }
