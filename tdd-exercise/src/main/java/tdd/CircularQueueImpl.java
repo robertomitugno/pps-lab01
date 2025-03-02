@@ -5,14 +5,14 @@ import java.util.List;
 
 public class CircularQueueImpl implements CircularQueue {
 
-    private static List<Integer> queue;
+    private static List<Integer> circularQueue;
 
     CircularQueueImpl() {
-        queue = new ArrayList<>();
+        circularQueue = new ArrayList<>();
     }
 
     @Override
     public boolean isEmpty() {
-        return queue.isEmpty();
+        return circularQueue.isEmpty();
     }
 }
