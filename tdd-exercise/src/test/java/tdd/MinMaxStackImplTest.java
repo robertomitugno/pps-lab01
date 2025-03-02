@@ -22,6 +22,12 @@ class MinMaxStackImplTest {
     }
 
     @Test
+    public void testNotEmpty() {
+        minMaxStack.push(FIRST_INTEGER);
+        assertFalse(minMaxStack.isEmpty());
+    }
+
+    @Test
     public void testPush() {
         minMaxStack.push(FIRST_INTEGER);
         assertFalse(minMaxStack.isEmpty());
