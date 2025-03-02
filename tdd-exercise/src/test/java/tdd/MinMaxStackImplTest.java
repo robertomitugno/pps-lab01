@@ -17,23 +17,25 @@ class MinMaxStackImplTest {
     }
 
     @Test
-    public void testStackInitialEmpty() {
+    public void testInitialEmpty() {
         MinMaxStackImpl minMaxStack = new MinMaxStackImpl();
         assertTrue(minMaxStack.isEmpty());
     }
 
     @Test
-    public void testStackPush() {
+    public void testPush() {
         MinMaxStackImpl minMaxStack = new MinMaxStackImpl();
         minMaxStack.push(FIRST_INTEGER);
         assertFalse(minMaxStack.isEmpty());
     }
 
     @Test
-    public void testStackPop() {
+    public void testPop() {
         MinMaxStackImpl minMaxStack = new MinMaxStackImpl();
         minMaxStack.push(FIRST_INTEGER);
         minMaxStack.pop();
         assertTrue(minMaxStack.isEmpty());
     }
+
+
 }
