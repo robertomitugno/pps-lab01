@@ -11,11 +11,16 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CircularListTest {
 
     private final static int FIRST_VALUE = 1;
+    private final static int SECOND_VALUE = 4;
+    private final static int THIRD_VALUE = 3;
+    private final static int FOURTH_VALUE = 6;
+    private final static int MAX_CAPACITY = 3;
+
     private CircularQueueImpl circularQueue;
 
     @BeforeEach
     void beforeEach() {
-        circularQueue = new CircularQueueImpl(3);
+        circularQueue = new CircularQueueImpl(MAX_CAPACITY);
     }
 
     @Test
@@ -38,9 +43,9 @@ public class CircularListTest {
     @Test
     public void testMaxCapacity(){
         circularQueue.add(FIRST_VALUE);
-        circularQueue.add(2);
-        circularQueue.add(3);
-        circularQueue.add(4);
-        assertEquals(3, circularQueue.size());
+        circularQueue.add(SECOND_VALUE);
+        circularQueue.add(THIRD_VALUE);
+        circularQueue.add(FOURTH_VALUE);
+        assertEquals(MAX_CAPACITY, circularQueue.size());
     }
 }
