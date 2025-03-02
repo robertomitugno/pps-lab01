@@ -7,19 +7,19 @@ public class MinMaxStackImpl implements MinMaxStack {
     Stack<Integer> stack;
 
     MinMaxStackImpl() {
-        stack = new Stack<>();
+        this.stack = new Stack<>();
     }
 
     @Override
     public void push(int value) {
-        stack.push(value);
+        this.stack.push(value);
     }
 
     @Override
     public int pop() {
-        if (stack.isEmpty())
+        if (this.stack.isEmpty())
             throw new IllegalStateException("Stack is empty");
-        return stack.pop();
+        return this.stack.pop();
     }
 
     @Override
