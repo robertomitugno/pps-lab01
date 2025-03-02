@@ -10,6 +10,7 @@ class MinMaxStackImplTest {
     MinMaxStack minMaxStack;
     private static final int FIRST_INTEGER = 1;
     private static final int SECOND_INTEGER = 2;
+    private static final int SIZE_STACK_AFTER_DOUBLE_PUSH = 2;
 
     @BeforeEach
     void setUp() {
@@ -87,9 +88,7 @@ class MinMaxStackImplTest {
     public void testSize(){
         minMaxStack.push(FIRST_INTEGER);
         minMaxStack.push(SECOND_INTEGER);
-        minMaxStack.push(FIRST_INTEGER);
-        minMaxStack.pop();
-        assertEquals(2, minMaxStack.size());
+        assertEquals(SIZE_STACK_AFTER_DOUBLE_PUSH, minMaxStack.size());
     }
 
 }
