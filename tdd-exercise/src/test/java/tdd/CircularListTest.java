@@ -71,4 +71,12 @@ public class CircularListTest {
         circularQueue.add(SECOND_VALUE);
         assertEquals(SECOND_VALUE, circularQueue.get(INDEX_GET_VALUE));
     }
+
+    @Test
+    public void testCheckAddOnLastFreePosition(){
+        circularQueue.add(FIRST_VALUE);
+        circularQueue.add(SECOND_VALUE);
+        circularQueue.add(THIRD_VALUE);
+        assertEquals(THIRD_VALUE, circularQueue.get(2));
+    }
 }
