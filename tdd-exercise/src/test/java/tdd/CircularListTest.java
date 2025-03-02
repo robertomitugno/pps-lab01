@@ -1,5 +1,6 @@
 package tdd;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,16 +10,22 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class CircularListTest {
 
+    private final static int FIRST_VALUE = 1;
+    private CircularQueueImpl circularQueue;
+
+    @BeforeEach
+    void beforeEach() {
+        circularQueue = new CircularQueueImpl();
+    }
+
     @Test
     public void testEmpty() {
-        CircularQueueImpl circularQueue = new CircularQueueImpl();
         assertTrue(circularQueue.isEmpty());
     }
 
     @Test
     public void testAdd(){
-        CircularQueueImpl circularQueue = new CircularQueueImpl();
-        circularQueue.add(1);
+        circularQueue.add(FIRST_VALUE);
         assertFalse(circularQueue.isEmpty());
     }
 
