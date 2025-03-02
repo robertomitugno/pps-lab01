@@ -15,6 +15,7 @@ public class CircularListTest {
     private final static int THIRD_VALUE = 3;
     private final static int FOURTH_VALUE = 6;
     private final static int MAX_CAPACITY = 3;
+    private final static int SIZE_AFTER_REMOVE = 2;
 
     private CircularQueueImpl circularQueue;
 
@@ -60,6 +61,6 @@ public class CircularListTest {
         circularQueue.add(SECOND_VALUE);
         circularQueue.add(THIRD_VALUE);
         circularQueue.remove();
-        assertEquals(2, circularQueue.size());
+        assertEquals(SIZE_AFTER_REMOVE, circularQueue.size());
     }
 }

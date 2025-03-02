@@ -43,5 +43,8 @@ public interface CircularQueue {
      */
     int getCapacity();
 
+    /**
+     * Remove an integer onto the circularQueue.
+     */
     void remove();
 }
